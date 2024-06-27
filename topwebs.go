@@ -29,7 +29,7 @@ var Sites []Site
 var finalJson = ""
 
 func main() {
-	fmt.Println(topTen())
+	fmt.Println(TopTen())
 }
 
 func TopTen() string {
@@ -44,7 +44,7 @@ func TopTen() string {
 
 	c.OnHTML("table.table_table__Rggo8 td", func(h *colly.HTMLElement) {
 		//add data to string or structure.
-		updateJson(h.Text)
+		UpdateJson(h.Text)
 	})
 
 	c.OnScraped(func(r *colly.Response) {
