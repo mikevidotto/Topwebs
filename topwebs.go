@@ -1,4 +1,4 @@
-package Topwebs
+package topwebs
 
 import (
 	"bufio"
