@@ -45,17 +45,17 @@ func TopTen(temp string) string {
 	})
 
 	c.OnScraped(func(r *colly.Response) {
-		fmt.Println("Finished", r.Request.URL)
+		//fmt.Println("Finished", r.Request.URL)
 
 		ParseBody(jsonBody)
 	})
 
 	c.OnResponse(func(r *colly.Response) {
-		fmt.Println("Response from ", r.Request.URL.String())
+		//fmt.Println("Response from ", r.Request.URL.String())
 	})
 
 	c.OnError(func(_ *colly.Response, err error) {
-		fmt.Println("Error encountered: ", err.Error())
+		//fmt.Println("Error encountered: ", err.Error())
 	})
 
 	c.Visit(ScrapeUrl)
