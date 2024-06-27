@@ -28,10 +28,6 @@ var jsonBody = ""
 var Sites []Site
 var finalJson = ""
 
-func main() {
-	fmt.Println(TopTen("temp"))
-}
-
 func TopTen(temp string) string {
 	//scrape the website for the correct data
 	ScrapeUrl := "https://www.semrush.com/website/top/"
@@ -131,8 +127,4 @@ func ParseBody(body string) string {
 	}
 	finalJson = string(j)
 	return string(j)
-}
-
-func TopTenWebs() string {
-	return finalJson
 }
