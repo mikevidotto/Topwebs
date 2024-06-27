@@ -32,7 +32,7 @@ func main() {
 	fmt.Println(topTen())
 }
 
-func topTen() string {
+func TopTen() string {
 	//scrape the website for the correct data
 	ScrapeUrl := "https://www.semrush.com/website/top/"
 
@@ -67,7 +67,7 @@ func topTen() string {
 	return finalJson
 }
 
-func updateJson(line string) {
+func UpdateJson(line string) {
 	jsonBody += line
 	jsonBody += "\n"
 }
@@ -136,6 +136,6 @@ func ParseBody(body string) string {
 	return string(j)
 }
 
-func toptenwebs() string {
+func TopTenWebs() string {
 	return finalJson
 }
