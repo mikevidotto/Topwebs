@@ -1,4 +1,4 @@
-module topwebs
+module github.com/mikevidotto/topwebs
 
 go 1.22.4
 
