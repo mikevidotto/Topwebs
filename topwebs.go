@@ -29,10 +29,10 @@ var Sites []Site
 var finalJson = ""
 
 func main() {
-	fmt.Println(TopTen())
+	fmt.Println(TopTen("temp"))
 }
 
-func TopTen() string {
+func TopTen(temp string) string {
 	//scrape the website for the correct data
 	ScrapeUrl := "https://www.semrush.com/website/top/"
 
@@ -44,7 +44,8 @@ func TopTen() string {
 
 	c.OnHTML("table.table_table__Rggo8 td", func(h *colly.HTMLElement) {
 		//add data to string or structure.
-		UpdateJson(h.Text)
+		jsonBody += h.Text
+		jsonBody += "\n"
 	})
 
 	c.OnScraped(func(r *colly.Response) {
@@ -64,12 +65,8 @@ func TopTen() string {
 	c.Visit(ScrapeUrl)
 	fmt.Println(finalJson, "ALRIGHT. ")
 	fmt.Println("yup that's it.")
-	return finalJson
-}
-
-func UpdateJson(line string) {
-	jsonBody += line
-	jsonBody += "\n"
+	temp = finalJson
+	return temp
 }
 
 func ParseBody(body string) string {
