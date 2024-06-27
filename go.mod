@@ -1,4 +1,4 @@
-module topwebs
+module Topwebs
 
 go 1.22
 
