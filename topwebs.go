@@ -28,7 +28,7 @@ var jsonBody = ""
 var Sites []Site
 var finalJson = ""
 
-func topten() string {
+func topTen() string {
 	//scrape the website for the correct data
 	ScrapeUrl := "https://www.semrush.com/website/top/"
 
