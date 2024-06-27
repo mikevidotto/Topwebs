@@ -39,7 +39,7 @@ func TopTen(temp string) string {
 	c := colly.NewCollector(colly.AllowedDomains("www.semrush.com", "semrush.com"))
 
 	c.OnRequest(func(r *colly.Request) {
-		fmt.Println("on request Visiting", r.URL.String(), "\n")
+		fmt.Println("Scraping", r.URL.String(), "\n")
 	})
 
 	c.OnHTML("table.table_table__Rggo8 td", func(h *colly.HTMLElement) {
@@ -51,7 +51,7 @@ func TopTen(temp string) string {
 	c.OnScraped(func(r *colly.Response) {
 		fmt.Println("Finished", r.Request.URL)
 
-		fmt.Println(ParseBody(jsonBody))
+		ParseBody(jsonBody)
 	})
 
 	c.OnResponse(func(r *colly.Response) {
@@ -63,8 +63,8 @@ func TopTen(temp string) string {
 	})
 
 	c.Visit(ScrapeUrl)
-	fmt.Println(finalJson, "ALRIGHT. ")
-	fmt.Println("yup that's it.")
+	//fmt.Println(finalJson, "ALRIGHT. ")
+	//fmt.Println("yup that's it.")
 	temp = finalJson
 	return temp
 }
@@ -120,7 +120,7 @@ func ParseBody(body string) string {
 
 	}
 
-	fmt.Println("-------------------------------------S    I    T     E    S----------------------------------")
+	//fmt.Println("-------------------------------------S    I    T     E    S----------------------------------")
 
 	j, _ := json.MarshalIndent(Sites, "", "  ")
 	//log.Println(string(j))
