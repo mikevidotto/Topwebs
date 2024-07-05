@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/gocolly/colly"
-	"net/http"
 	"strings"
 )
 
@@ -125,6 +124,5 @@ func ParseBody(body string) string {
 	if err := scanner.Err(); err != nil {
 		fmt.Printf("error occurred: %v\n", err)
 	}
-	finalJson = string(j)
-	return http.ResponseWriter(string(j))
+	return string(j)
 }
