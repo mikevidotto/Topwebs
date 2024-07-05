@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/gocolly/colly"
+	"net/http"
 	"strings"
 )
 
@@ -28,7 +29,7 @@ var jsonBody = ""
 var Sites []Site
 var finalJson = ""
 
-func TopTen(temp string) string {
+func TopTen() string {
 	//scrape the website for the correct data
 	ScrapeUrl := "https://www.semrush.com/website/top/"
 
@@ -126,5 +127,5 @@ func ParseBody(body string) string {
 		fmt.Printf("error occurred: %v\n", err)
 	}
 	finalJson = string(j)
-	return string(j)
+	return http.ResponseWriter(string(j))
 }
