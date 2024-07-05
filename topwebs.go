@@ -62,8 +62,7 @@ func TopTen() string {
 	c.Visit(ScrapeUrl)
 	//fmt.Println(finalJson, "ALRIGHT. ")
 	//fmt.Println("yup that's it.")
-	temp = finalJson
-	return temp
+	return finalJson
 }
 
 func ParseBody(body string) string {
